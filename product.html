@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/icon" href="image/favicon.png">	
+	<!--code for font awesome cdn -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--code for font awesome cdn -->
+
+    <!--Code for linking css file-->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--Code for linking css file-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+</head>
+<body>
+    <!--products section-->
+<section class="products" id="products">
+
+	<h1 class="heading"> our<span>products</span></h1>
+	
+	<div class=" swiper product-slider">
+		<div class=" swiper-wrapper">
+			
+			<div class="swiper-slide  box">
+				<img src="image/product-1.png">
+				<h1>fresh orange</h1>
+				<div class="price"> $12.99/-- 15.99/- </div>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+
+
+			<div class="swiper-slide  box">
+				<img src="image/product-2.png">
+				<h1>fresh onion</h1>
+				<div class="price"> $12.99/-- 15.99/- </div>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half"></i>
+				</div>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+
+
+			<div class="swiper-slide  box">
+				<img src="image/product-3.png">
+				<h1>fresh meat</h1>
+				<div class="price"> $12.99/-- 15.99/- </div>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+
+			
+			<div class="swiper-slide  box">
+				<img src="image/product-4.png">
+				<h1>fresh cabbage</h1>
+				<div class="price"> $12.99/-- 15.99/- </div>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half"></i>
+				</div>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+
+		</div>
+    </div>
+
+
+
+    <div class=" swiper product-slider">
+		<div class=" swiper-wrapper">
+			
+			<div class="swiper-slide  box">
+				<img src="image/product-5.png">
+				<h1>fresh potato</h1>
+				<div class="price"> $12.99/-- 15.99/- </div>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+
+
+			<div class="swiper-slide  box">
+				<img src="image/product-6.png">
+				<h1>fresh avocado</h1>
+				<div class="price"> $12.99/-- 15.99/- </div>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half"></i>
+				</div>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+
+
+			<div class="swiper-slide  box">
+				<img src="image/product-7.png">
+				<h1>fresh carrot</h1>
+				<div class="price"> $12.99/-- 15.99/- </div>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+
+			
+			<div class="swiper-slide  box">
+				<img src="image/product-8.png">
+				<h1>fresh lemon</h1>
+				<div class="price"> $12.99/-- 15.99/- </div>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half"></i>
+				</div>
+				<a href="#" class="btn">add to cart</a>
+			</div>
+
+		</div>
+    </div>
+<script>
+	let searchForm = document.querySelector('.search-form');
+document.querySelector('#search-btn').onclick = () =>
+{
+	searchForm.classList.toggle('active');
+	shoppingCart.classList.remove('active');
+	loginForm.classList.remove('active');
+	navbar.classList.remove('active');
+}
+
+
+let shoppingCart = document.querySelector('.shopping-cart');
+document.querySelector('#cart-btn').onclick = () =>
+{
+	shoppingCart.classList.toggle('active');
+	searchForm.classList.remove('active');
+	loginForm.classList.remove('active');
+	navbar.classList.remove('active');
+}
+
+
+let loginForm = document.querySelector('.login-form');
+document.querySelector('#login-btn').onclick = () =>
+{
+	loginForm.classList.toggle('active');
+	searchForm.classList.remove('active');
+	shoppingCart.classList.remove('active');
+	navbar.classList.remove('active');
+	
+}
+
+
+let navbar = document.querySelector('.navbar');
+document.querySelector('#menu-btn').onclick = () =>
+{
+	navbar.classList.toggle('active');
+	searchForm.classList.remove('active');
+	shoppingCart.classList.remove('active');
+	loginForm.classList.remove('active');
+
+}
+
+
+
+window.onscroll = () =>
+{
+	searchForm.classList.remove('active');
+	shoppingCart.classList.remove('active');
+	loginForm.classList.remove('active');
+	navbar.classList.remove('active');
+	
+}
+
+
+    var swiper = new Swiper(".product-slider", {
+      loop:true,
+      spaceBetween: 20,
+
+      autoplay:{
+      	delay:7500,
+      	disiableOnInteraction:false,
+      },
+      
+     
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          
+        },
+        768: {
+          slidesPerView: 2,
+         
+        },
+        1020: {
+          slidesPerView: 3,
+          
+        },
+      },
+    });
+
+</script>
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+	<script src="js/script.js"></script>
+
+</section>
+</body>
+</html>

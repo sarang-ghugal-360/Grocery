@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+           body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('goku1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+}
+
+.container {
+    
+    width: 30%; /* Set the width to 80% of the viewport width */
+    margin: 20px; /* Add a 10% margin around the container */
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Style your form elements here */
+
+
+/* Style your form elements here */
+
+        
+
+
+
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .error-message {
+            color: #ff0000;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign up  Form</h2>
+        <form id="registration-form" method="post" action="db.php">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <div class="error-message" id="name-error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error-message" id="email-error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div class="error-message" id="phone-error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <div class="error-message" id="password-error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <div class="error-message" id="confirm-password-error"></div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <script>
+         const form = document.getElementById("registration-form");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const phoneInput = document.getElementById("phone");
+    const passwordInput = document.getElementById("password");
+    const confirmPasswordInput = document.getElementById("confirm-password");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Reset previous error messages
+            const errorMessages = document.querySelectorAll(".error-message");
+            errorMessages.forEach((errorMessage) => (errorMessage.textContent = ""));
+
+            // Validation logic
+            let isValid = true;
+
+            if (!validateName()) {
+            isValid = false;
+        }
+
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailPattern.test(emailInput.value)) {
+            document.getElementById("email-error").textContent = "Invalid email format.";
+            isValid = false;
+        }
+
+        const phonePattern = /^\d{10}$/;
+        if (!phonePattern.test(phoneInput.value)) {
+            document.getElementById("phone-error").textContent = "Phone number must be 10 digits.";
+            isValid = false;
+        }
+
+        if (passwordInput.value.length < 6) {
+            document.getElementById("password-error").textContent = "Password must be at least 6 characters.";
+            isValid = false;
+        }
+
+        if (passwordInput.value !== confirmPasswordInput.value) {
+            document.getElementById("confirm-password-error").textContent = "Passwords do not match.";
+            isValid = false;
+        }
+
+        if (isValid) {
+            form.submit(); // Submit the form if it's valid
+        }
+    });
+
+    // Add the validateName function here
+    function validateName() {
+        var name = nameInput.value.trim();
+
+        if (!/^[a-zA-Z\s]*$/.test(name)) {
+            document.getElementById('name-error').innerHTML = 'Name must contain only letters and spaces.';
+            document.querySelector('label[for="name"]').classList.add('error');
+            return false;
+        } else {
+            document.getElementById('name-error').innerHTML = '';
+            document.querySelector('label[for="name"]').classList.remove('error');
+            return true;
+        }
+    }
+    </script>
+</body>
+</html>
